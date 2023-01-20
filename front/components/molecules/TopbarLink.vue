@@ -1,5 +1,5 @@
 <template>
-  <p class="text-white">
+  <p class="text-white cursor-pointer">
     {{ props.label }}
   </p>
 </template>
