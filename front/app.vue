@@ -18,5 +18,44 @@
 
 <script setup lang="ts">
 import TheNavbar from "~/components/organisms/TheNavbar.vue";
+import SideCard from "~/components/molecules/SideCard.vue";
+import type { CSSProperties } from 'vue'
+
+import {useParallax, useWindowSize} from '@vueuse/core'
+
+const target = ref(null)
+const parallax = reactive(useParallax(target))
+
+const layerBase: CSSProperties = {
+  position: 'absolute',
+  transition: '.3s ease-out all',
+}
+const layer0 = computed(() => ({
+  ...layerBase,
+  transform: `translateX(${parallax.tilt * 10}px) translateY(${parallax.roll * 10}px)`,
+}))
+const layer1 = computed(() => ({
+  ...layerBase,
+  transform: `translateX(${parallax.tilt * 20}px) translateY(${parallax.roll * 20}px)`,
+}))
+const layer2 = computed(() => ({
+  ...layerBase,
+  transform: `translateX(${parallax.tilt * 30}px) translateY(${parallax.roll * 30}px)`,
+}))
+const layer3 = computed(() => ({
+  ...layerBase,
+  transform: `translateX(${parallax.tilt * 40}px) translateY(${parallax.roll * 40}px)`,
+}))
+const layer4 = computed(() => ({
+  ...layerBase,
+  transform: `translateX(${parallax.tilt * 50}px) translateY(${parallax.roll * 50}px)`,
+}))
 
 </script>
+
+<style>
+  html {
+    z-index: -50;
+    background-color: #090723;
+  }
+</style>
