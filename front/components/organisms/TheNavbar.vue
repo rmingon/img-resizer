@@ -1,17 +1,11 @@
 <template>
-  <div class="flex flex-between items-center py-3 w-full">
-    <div> <!-- LOGO -->
-
-    </div>
-    <div class="flex text-white space-x-2">
-      <topbar-link label="TOTO"/>
-      <topbar-link label="TOTO"/>
-      <topbar-link label="TOTO"/>
-      <topbar-link label="TOTO"/>
+  <div class="flex justify-between items-center py-3 w-full px-3">
+    <div class="text-gray-50"> <!-- LOGO -->
+      RESIZOR
     </div>
     <div class="flex text-white bg-white h-10 items-center rounded-3xl flex-between px-1 py-1 space-x-2">
       <div>
-        <img src="@/assets/flag/fr.png" alt="" class="object-cover w-6 h-6 rounded-full ">
+        <img src="@/assets/flag/fr.png" alt="" class="object-cover w-7 h-7 rounded-full ">
       </div>
       <div>
         <select class="text-black w-12" v-model="lang">
