@@ -13,18 +13,27 @@
           <option value="en">EN</option>
         </select>
       </div>
-      <div class="bg-[#FE385C] rounded-2xl h-full cursor-pointer text-[14px] flex items-center justify-center w-20 hover:bg-[#FE637E] active:bg-[#FC002D] transition duration-150 select-none ">
+      <div @click="signUpModalShow = true" class="bg-[#FE385C] rounded-2xl h-full cursor-pointer text-[14px] flex items-center justify-center w-20 hover:bg-[#FE637E] active:bg-[#FC002D] transition duration-150 select-none ">
         SingUp
       </div>
     </div>
+    <modal
+      v-if="signUpModalShow"
+      @close="signUpModalShow = false"
+    >
+      <template v-slot:body>
+        <input type="text">
+        <input type="text">
+      </template>
+    </modal>
   </div>
 </template>
 
 <script setup lang="ts">
-
-import TopbarLink from "~/components/molecules/TopbarLink.vue";
+import Modal from "~/components/organisms/Modal.vue";
 
 const lang = ref("")
+const signUpModalShow = ref(false)
 
 </script>
 
