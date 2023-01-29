@@ -2,8 +2,8 @@
   <div class="text-6xl text-white ml-6">
     Resize your image in all FORMAT
   </div>
-  <div class="bg-white/75 rounded ml-6 w-full mt-4 py-3 px-3" ref="dropZoneRef" :class="isOverDropZone ? 'bg-green' : ''">
-    <div class="px-3 py-3 border-dashed border-2 border-midnight rounded">
+  <div class="bg-white rounded ml-6 w-full mt-4 py-3 px-3" ref="dropZoneRef" >
+    <div class="px-3 py-3 border-dashed border-2 rounded" :class="isOverDropZone ? 'bg-green' : 'border-midnight'">
       <h2>Files to Upload (Drag them over)</h2>
     </div>
     <div class="flex items-center justify-center space-x-1"  v-for="(file, i) in files" :key="i">
@@ -33,6 +33,14 @@
         <div class="flex">
           <checkbox title="png"></checkbox>
           <checkbox title="jpg"></checkbox>
+        </div>
+      </div>
+      <div class="ml-4 flex items-center">
+        <div>
+          <h5>Protect :</h5>
+        </div>
+        <div class="flex">
+          <input type="text">
         </div>
       </div>
       <div class="flex flex-col">
